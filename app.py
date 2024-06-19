@@ -10,7 +10,7 @@ from backend import (
 
 @st.experimental_dialog("Mostrar Vizinhos")
 def show_neihgboors(neighboors):
-    neighboors = neighboors.drop(columns="distancia")    
+    neighboors = neighboors.drop(columns="l2_distance")    
     st.dataframe(
     neighboors,
     column_config={
@@ -122,13 +122,13 @@ with st.sidebar:
         st.session_state.attempts = []
         st.session_state.charade = write_charade(st.session_state.secret_word)
         st.session_state.attempts = []
-        st.session_state.w_guessed_word = []
+        st.session_state.w_guessed_word = []        
         escolhendo_palavra(st.session_state.secret_word)
 
         print(st.session_state.secret_word)
     if prompt := st.button("Dicas"):
         df_neihgboors = escolhendo_palavra(st.session_state.secret_word)
-        numero = np.random.randint(50)
+        numero = np.random.randint(2, 50)
         guessed_word = df_neihgboors.loc[[numero]]['word'].values[0]
         st.session_state.w_guessed_word = guessed_word
 
@@ -161,3 +161,5 @@ if guessed_word:
     submit_guessed_word(guessed_word)
 
 register_attempts()
+
+print(st.session_state.secret_word)
