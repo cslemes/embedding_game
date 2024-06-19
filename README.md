@@ -1,7 +1,7 @@
-# Jogo de Palavrinhas
+# Jogo de Palavrinhas #
 
 
-**Como Jogar **
+**Como Jogar**
 O jogo sorteia uma palavra e daí e cria uma charada para você tentar adivinhar qual palavra é. Quanto mais longe da resposta certa maior a distância. O Jogo calcula a distância entre as palavras. De acordo com seu contexto de uso gramatical. As palavras são sorteadas aleatoriamente de um arquivo de palavras.
 
 **Tecnicamente**:
