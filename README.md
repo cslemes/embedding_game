@@ -1,63 +1,82 @@
-# embedding_game
-# Word Guessing Game with Streamlit
+# Jogo de Palavrinhas
 
-Welcome to the Word Guessing Game implemented with Streamlit! This interactive game allows users to guess a secret word based on clues provided. The game uses embeddings and distance metrics to help users narrow down their guesses.
+
+**Como Jogar **
+O jogo sorteia uma palavra e daí e cria uma charada para você tentar adivinhar qual palavra é. Quanto mais longe da resposta certa maior a distância. O Jogo calcula a distância entre as palavras. De acordo com seu contexto de uso gramatical. As palavras são sorteadas aleatoriamente de um arquivo de palavras.
+
+**Tecnicamente**:
+Primeiro o jogo sorteia a palavra, para não vir palavras muito difíceis foi usado a biblioteca
+`mac_morpho` (que possui uma série de textos em português) do `NLTK`, e calculado frequência das palavras e obtido as mais usadas.
+O Jogo usa embeddings de palavras, pré treinados pelo centro de linguística da **USP**.
+Utiliza usa a similaridade L2 para calcular os K vizinhos mais próximos.
+Para saber mais da biblioteca de embeddings [nilc.icmc.usp.br](http://www.nilc.icmc.usp.br/embeddings/)
 
 ## Features
 
-- **Random Secret Word**: A secret word is randomly selected from a pre-defined list of words.
-- **Clue Generation**: Each secret word comes with a charade-like clue to assist in guessing.
-- **Distance Calculation**: Utilizes word embeddings and the L2 distance metric to determine how close a guessed word is to the secret word.
-- **Hint System**: Provides hints by showing neighboring words based on their similarity to the secret word.
-- **Persistent State**: Keeps track of user attempts and allows restarting the game with a new secret word.
+## Tecnologias Utilizadas
 
-## Technologies Used
+- [**Streamlit**](https://streamlit.io/): Framework front-end para construir aplicações web interativas com Python.
+- [**Pandas**](https://pandas.pydata.org/): Biblioteca para manipulação e análise de dados.
+- [**FAISS**](https://github.com/facebookresearch/faiss): Biblioteca para busca de similaridade eficiente e clustering de vetores densos.
+- [**NLTK**](https://www.nltk.org/): Toolkit de Processamento de Linguagem Natural para tarefas de processamento de linguagem.
+- [**Groq**](https://groq.com/): Plataforma de cloud que fornece API para uso de modelos de LLM fundacionais.
 
-- **Streamlit**: Front-end framework for building interactive web applications with Python.
-- **numpy**: Library for numerical computing.
-- **pandas**: Data manipulation and analysis library.
-- **FAISS**: Library for efficient similarity search and clustering of dense vectors.
-- **NLTK**: Natural Language Toolkit for natural language processing tasks.
+## Funcionalidades do Jogo ##
+ 
+1. **Palavra Secreta Aleatória**: Uma palavra secreta é selecionada aleatoriamente de uma lista predefinida de palavras.
+2. **Geração de Pistas**: Cada palavra secreta vem com uma pista semelhante a uma charada para ajudar na adivinhação.
+3. **Cálculo de Distância**: Utiliza embeddings de palavras e a métrica de distância L2 para determinar quão próxima a palavra adivinhada está da palavra secreta.
+4. **Sistema de Dicas**: Fornece dicas mostrando palavras vizinhas com base na similaridade com a palavra secreta.
+5. **Estado Persistente**: Mantém o controle das tentativas do usuário e permite reiniciar o jogo com uma nova palavra secreta.
 
-## How to Run
+## Como rodar ##
 
-1. Clone the repository:
+Para criação dos índices de palavras foi usado o FAISS, foi usado um embedding pré-treinado pelo [NILC](# http://www.nilc.icmc.usp.br/embeddings) da [USP](https://www5.usp.br/), foi usado a versão GloVe de 50 dimensões, e importado diretamente para o FAISS, para manter a relação entre palavras e embedding foi criado um arquivo pickle.
+
+- data.py: Script para gerar o arquivo de index.faiss e o arquivo pickel
+- backend.py: contém as funções para rodar a aplicação
+- app.py: Front End que usa o StreamLit
+
+1. Faça o clone do repositório
 
 ```
 git clone <repository_url>
 cd <repository_name>
 ```
 
-2. Install dependencies:
-
+2. Instale as dependências
 
 ```
 pip install -r requirements.txt
 ```
 
-
-3. Run the Streamlit app:
+3. Baixe o arquivo de embeddings na página do [NILC](http://www.nilc.icmc.usp.br/embeddings
+4. Rode o script backend.py para gerar os dados para aplicação.
+5. Crie um chave de api no Groq Cloud, e salve em um arquivo .env, com o nome `GROQ_API_KEY`
+6. Rode o Aplicativo com o streamlit
 
 ```
-streamlit run game_app.py
+streamlit run app.py
 ```
 
-
-
-4. Access the game in your browser at `http://localhost:8501`.
+4. Acesso o jogo pela url `http://localhost:8501`.
 
 ## Screenshots
 
-Include screenshots or GIFs of the game interface and key features in action.
+![Home page](homepage.png)
 
-## Contributing
+![Vizinhos](vizinhos.png)
 
-Contributions are welcome! Please follow the guidelines in `CONTRIBUTING.md`.
+![](vitoria.png)
 
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-## Acknowledgments
+## Referencias
 
-- Mention any acknowledgments of libraries, tools, or people whose work has been instrumental in this project.
+
+https://www.linguateca.pt/ACDC/
+http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html
+https://medium.com/turing-talks/pos-tagging-da-teoria-%C3%A0-implementa%C3%A7%C3%A3o-eafa59c9d115
+https://medium.com/@evelyn.roque04/estudo-sobre-processamento-de-linguagem-natural-com-nltk-29cfe41923c3

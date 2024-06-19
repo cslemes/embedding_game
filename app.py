@@ -137,8 +137,8 @@ with st.sidebar:
     st.markdown(
     """    
     ### Como jogar 🎲 ###
-    O jogo sortea uma palavra e dá e cria uma charada para você tentar adminhar qual palavra é.
-    Quanto mas longe da resposta certa maior a distância.	
+    O jogo sorteia uma palavra e daí cria uma charada para você tentar adivinhar qual palavra é.
+    Quanto mais longe da resposta certa maior a distância.	
     O Jogo calcula a distância entre as palavras. De acordo com seu contexto de uso gramatical.
     As palavras são sorteadas aleatoriamente de um arquivo de palavras.
     """
