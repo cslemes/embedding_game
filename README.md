@@ -74,7 +74,7 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 ## Referencias
 
 
-https://www.linguateca.pt/ACDC/
-http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html
-https://medium.com/turing-talks/pos-tagging-da-teoria-%C3%A0-implementa%C3%A7%C3%A3o-eafa59c9d115
-https://medium.com/@evelyn.roque04/estudo-sobre-processamento-de-linguagem-natural-com-nltk-29cfe41923c3
+- https://www.linguateca.pt/ACDC/
+- http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html
+- https://medium.com/turing-talks/pos-tagging-da-teoria-%C3%A0-implementa%C3%A7%C3%A3o-eafa59c9d115
+- https://medium.com/@evelyn.roque04/estudo-sobre-processamento-de-linguagem-natural-com-nltk-29cfe41923c3
