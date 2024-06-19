@@ -11,8 +11,6 @@ O Jogo usa embeddings de palavras, pré treinados pelo centro de linguística da
 Utiliza usa a similaridade L2 para calcular os K vizinhos mais próximos.
 Para saber mais da biblioteca de embeddings [nilc.icmc.usp.br](http://www.nilc.icmc.usp.br/embeddings/)
 
-## Features
-
 ## Tecnologias Utilizadas
 
 - [**Streamlit**](https://streamlit.io/): Framework front-end para construir aplicações web interativas com Python.
