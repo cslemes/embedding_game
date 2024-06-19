@@ -81,7 +81,7 @@ def submit():
     st.session_state.widget = ""
 
 def submit_guessed_word(guessed_word):   
-    guessed_word = guessed_word.lower()
+    guessed_word = guessed_word.lower().strip()
     df_neihgboors = escolhendo_palavra(st.session_state.secret_word)
     distance = get_distance_rank(guessed_word, df_neihgboors)        
     st.session_state.attempts.append((guessed_word, distance))    
@@ -92,7 +92,8 @@ def submit_guessed_word(guessed_word):
         
     st.markdown(
     f"""
-    <div class="label">Distancia: {str_distance}</div>
+    **Distancia:** {str_distance} **Tentativas:** {len(st.session_state.attempts)}
+
     """,
     unsafe_allow_html=True
     )
