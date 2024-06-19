@@ -64,8 +64,6 @@ st.set_page_config(page_icon="🕹️", layout="wide",
 if 'secret_word' not in st.session_state:
     st.session_state.secret_word = get_secret_word(cache_secret_wordlist())
     
-    print(st.session_state.secret_word)
-    
 if 'attempts' not in st.session_state:
     st.session_state.attempts = []
 
@@ -142,16 +140,6 @@ with st.sidebar:
     Quanto mas longe da resposta certa maior a distância.	
     O Jogo calcula a distância entre as palavras. De acordo com seu contexto de uso gramatical.
     As palavras são sorteadas aleatoriamente de um arquivo de palavras.
-    
-    ### Tecnicamente: 🔬 ###
-    Primeiro o jogo sorteia a palavra, para não vir palavras muito difíceis foi  usado a biblioteca
-    mac_morpho do nltk, e calculado frequência das palavras e obitido as mais usadas. 
-    
-    O Jogo usa embeddings de palavras, pré treinados pelo centro de linguistica da USP.
-    Depois usando o algoritmo FAISS para encontrar as palavras vizinhas, dentro do espaço vetorial de 50 dimensões.
-    E usa a similaridade L2 para calcular os K vizinhos mais próximos.
-    
-    Para saber mais da biblioteca de emebeddings [nilc.icmc.usp.br](http://www.nilc.icmc.usp.br/embeddings/)
     """
 )    
 
