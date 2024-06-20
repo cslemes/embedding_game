@@ -7,15 +7,16 @@ import pickle
 from groq import Groq
 import os
 from dotenv import load_dotenv
+from os.path import join
 
 # %%
 def load_index_file():
-    index_file = 'glove_index.faiss'
+    index_file = join('data', 'glove_index.faiss')
     return faiss.read_index(index_file)
 
 
 def load_word_to_index_file():
-    word_to_index_file = 'word_to_index.pkl'
+    word_to_index_file = join('data', 'word_to_index.pkl')
     with open(word_to_index_file, 'rb') as f:
         return pickle.load(f)
 
@@ -95,3 +96,6 @@ def write_charade(secret_word):
     )
     return chat_completion.choices[0].message.content
 
+def secret_word_list():
+    df_secret_word = pd.read_pickle(join('data', 'secret_words.pkl'))
+    return df_secret_word

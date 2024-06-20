@@ -47,9 +47,5 @@ secret_words = freq.most_common(3000)
 df = pd.DataFrame(secret_words, columns=['word', 'frequency'])
 
 # %%
-df
-# %%
-df.to_csv('secret_words.csv', index=False)
-# %%
 df.to_pickle('secret_words.pkl')
 # %%

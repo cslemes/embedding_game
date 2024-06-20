@@ -63,11 +63,11 @@ streamlit run app.py
 
 ## Screenshots
 
-![Home page](homepage.png)
+![Home page](images/homepage.png)
 
-![Vizinhos](vizinhos.png)
+![Vizinhos](images/vizinhos.png)
 
-![](vitoria.png)
+![Virtoria](images/vitoria.png)
 
 ## License
 

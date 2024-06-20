@@ -21,9 +21,8 @@ def load_glove_model(file_path, expected_dim=50):
                 print(f"Skipping line with error: {line}")
     return glove_model
 
-# Caminho para o arquivo GloVe (mude conforme necessário)
-# http://www.nilc.icmc.usp.br/embeddings
-glove_file = 'corpus/glove_s50.txt'
+# Caminho para o arquivo GloVe 
+glove_file = '../corpus/glove_s50.txt'
 
 # Carrega o modelo GloVe
 glove_model = load_glove_model(glove_file)

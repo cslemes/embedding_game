@@ -1,11 +1,11 @@
 import streamlit as st
 import numpy as np
-import pandas as pd
 from backend import (
     get_secret_word,
     get_neihgboors,
     get_distance_rank,
-    write_charade
+    write_charade,
+    secret_word_list
 ) 
 
 @st.experimental_dialog("Mostrar Vizinhos")
@@ -44,9 +44,7 @@ def escolhendo_palavra(guessed_word):
 
 @st.cache_data
 def cache_secret_wordlist():
-    df_secret_word = pd.read_pickle('secret_words.pkl')
-    return df_secret_word
-
+    return secret_word_list()
 
 def icon(emoji: str):
     """Shows an emoji as a Notion-style page icon."""
