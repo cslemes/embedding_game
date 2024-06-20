@@ -1,7 +1,7 @@
-# Jogo de Palavrinhas
+# Jogo de Palavrinhas #
 
 
-**Como Jogar **
+**Como Jogar**
 O jogo sorteia uma palavra e daí e cria uma charada para você tentar adivinhar qual palavra é. Quanto mais longe da resposta certa maior a distância. O Jogo calcula a distância entre as palavras. De acordo com seu contexto de uso gramatical. As palavras são sorteadas aleatoriamente de um arquivo de palavras.
 
 **Tecnicamente**:
@@ -10,8 +10,6 @@ Primeiro o jogo sorteia a palavra, para não vir palavras muito difíceis foi us
 O Jogo usa embeddings de palavras, pré treinados pelo centro de linguística da **USP**.
 Utiliza usa a similaridade L2 para calcular os K vizinhos mais próximos.
 Para saber mais da biblioteca de embeddings [nilc.icmc.usp.br](http://www.nilc.icmc.usp.br/embeddings/)
-
-## Features
 
 ## Tecnologias Utilizadas
 
@@ -76,7 +74,7 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 ## Referencias
 
 
-https://www.linguateca.pt/ACDC/
-http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html
-https://medium.com/turing-talks/pos-tagging-da-teoria-%C3%A0-implementa%C3%A7%C3%A3o-eafa59c9d115
-https://medium.com/@evelyn.roque04/estudo-sobre-processamento-de-linguagem-natural-com-nltk-29cfe41923c3
+- https://www.linguateca.pt/ACDC/
+- http://www.nilc.icmc.usp.br/nilc/tools/nilctaggers.html
+- https://medium.com/turing-talks/pos-tagging-da-teoria-%C3%A0-implementa%C3%A7%C3%A3o-eafa59c9d115
+- https://medium.com/@evelyn.roque04/estudo-sobre-processamento-de-linguagem-natural-com-nltk-29cfe41923c3
