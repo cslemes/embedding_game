@@ -5,7 +5,8 @@ from backend import (
     get_neihgboors,
     get_distance_rank,
     write_charade,
-    secret_word_list
+    secret_word_list,
+    get_word_of_the_day
 ) 
 
 @st.experimental_dialog("Mostrar Vizinhos")
@@ -60,7 +61,7 @@ st.set_page_config(page_icon="🕹️", layout="wide",
 # Initialize session state
 # ----------------------
 if 'secret_word' not in st.session_state:
-    st.session_state.secret_word = get_secret_word(cache_secret_wordlist())
+    st.session_state.secret_word = get_word_of_the_day(cache_secret_wordlist())
     
 if 'attempts' not in st.session_state:
     st.session_state.attempts = []
@@ -71,8 +72,12 @@ if 'w_guessed_word' not in st.session_state:
 if 'charade' not in st.session_state:
     st.session_state.charade = write_charade(st.session_state.secret_word)
 
+     
+
+
 # Declare functions
 # -----------------
+
 
 def submit():
     st.session_state.w_guessed_word = st.session_state.widget
