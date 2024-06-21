@@ -109,7 +109,7 @@ def write_charade(secret_word):
         api_key=os.getenv("GROQ_API_KEY"),
     )
     prompt = f""" Você deve criar uma charada engraçada e criativa com a palavra secreta,
-    Você não pode informar a palavra secreta.
+    Você não pode informar a palavra secreta na resposta.
     Palvra secreta: {secret_word} """
 
     chat_completion = client.chat.completions.create(
